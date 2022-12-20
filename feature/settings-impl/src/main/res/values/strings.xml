@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">settings-impl</string>
+    <string name="intLang">Interface language</string>
+    <string name="serverName">Server name</string>
+    <string name="dbName">Database name</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="Apply">Apply</string>
+    <string name="Close">Close</string>
+</resources>

@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+    }
+
+    buildFeatures {
+        compose true
+    }
+    namespace 'com.example.core.feature_api'
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.6.0'
+
+    api "androidx.compose.ui:ui:$compose_version"
+    api "androidx.navigation:navigation-compose:2.4.0-alpha10"
+}

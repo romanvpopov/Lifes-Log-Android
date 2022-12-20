@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "LifesLog"
+include ':app',
+        ':core',
+        ':core:lldp',
+        ':core:feature-api',
+        ':feature',
+        ':feature:events-api',
+        ':feature:events-impl',
+        ':feature:money-api',
+        ':feature:money-impl',
+        ':feature:sport-api',
+        ':feature:sport-impl',
+        ':feature:health-api',
+        ':feature:health-impl',
+        ':feature:home-api',
+        ':feature:home-impl'
+include ':feature:settings-api'
+include ':feature:settings-impl'

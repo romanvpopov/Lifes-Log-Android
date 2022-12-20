@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+    }
+    namespace 'com.example.core.lldp'
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+
+    implementation project(':feature:home-api')
+    implementation project(':feature:events-api')
+    implementation project(':feature:money-api')
+    implementation project(':feature:sport-api')
+    implementation project(':feature:health-api')
+    implementation project(':feature:settings-api')
+}
