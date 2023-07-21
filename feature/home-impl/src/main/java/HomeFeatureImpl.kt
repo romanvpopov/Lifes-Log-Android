@@ -32,21 +32,20 @@ class HomeFeatureImpl : HomeFeatureApi {
             modifier = modifier
         )*/
     }
-    init {
+    fun CheckCon(): String {
         val prefs = LLDP.getPrefs()
         val serverName = prefs.getString("serverName", "")
         val dbName = prefs.getString("dbName", "")
         val login = prefs.getString("login", "")
         val password = prefs.getString("password", "")
-        //ActivityCompat.requestPermissions(this,new String[]{ Manifest.permission.INTERNET}, PackageManager.PERMISSION_GRANTED);
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver")
             val con = DriverManager.getConnection(
                 "jdbc:jtds:sqlserver://sql.mt-soft.ru:44433/LL","sa","P12455p93")
-            stCon = "Ok"
+            return "Ok"
             LLDP.setCon(con)
         } catch (e: Exception) {
-            stCon = e.toString()
+            return e.toString()
         }
     }
 }

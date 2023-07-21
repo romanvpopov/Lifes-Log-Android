@@ -1,8 +1,10 @@
 package com.example.lifeslog
 
+import android.Manifest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.app.ActivityCompat
 import androidx.core.view.WindowCompat
 import com.example.core.lldp.LLDP
 import com.example.feature.events_impl.EventsFeatureImpl
@@ -17,6 +19,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, true)
+        ActivityCompat.requestPermissions(this,
+            arrayOf(Manifest.permission.INTERNET), 1)
         LLDP.setPrefs(getSharedPreferences("langDB", MODE_PRIVATE))
         LLDP.provideImpl(
             homeFeatureApi = HomeFeatureImpl(),

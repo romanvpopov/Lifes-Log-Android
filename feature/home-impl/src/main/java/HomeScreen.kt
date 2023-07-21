@@ -17,25 +17,29 @@ import androidx.navigation.NavHostController
 import com.example.core.lldp.LLDP
 
 @Composable
-fun HomeScreen(modifier: Modifier, navController: NavHostController, sms: String) {
+fun HomeScreen(modifier: Modifier,
+               navController: NavHostController,
+               stCon: String) {
     Column(
         //modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        CircularProgressIndicator()
-        Text(sms)
-        if (sms!=""){
+        if (stCon=="Ok") {
+            CircularProgressIndicator()
+            Text("connecting")
+        } else {
+            Text(stCon)
             Button(onClick = { /*TODO*/ }) {
                 Text("settings")
             }
         }
-        Button(
+        /*Button(
             modifier = Modifier.padding(16.dp),
             onClick = {
                 //navController.navigate(SettingsFeatureAPI.settingsRoute())
             }) {
             Text("Navigate to A-B scenario")
-        }
+        }*/
     }
 }
